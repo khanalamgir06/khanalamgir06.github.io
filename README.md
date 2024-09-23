@@ -35,7 +35,7 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I am a software engineer with a Bachelor’s degree in Computer Science from XYZ University. My expertise lies in full-stack development, and I have a keen interest in AI and machine learning.</p>
+            <p>I am a software engineer with a Bachelor’s degree in Electronics and communication from NIST, Odisha. My expertise lies in End to end performance testing and engineering, and I have a keen interest in AI and machine learning.</p>
             <h3>Skills</h3>
             <ul>
                 <li>JavaScript</li>
@@ -44,7 +44,7 @@
                 <li>Node.js</li>
             </ul>
             <h3>Education</h3>
-            <p>B.Sc. in Computer Science, XYZ University</p>
+            <p>B.Tech in Electronics and communication engineering from NIST Odisha</p>
         </div>
     </section>
 
@@ -104,8 +104,8 @@
 
                 <button type="submit" class="cta-button">Send Message</button>
             </form>
-            <p>Email: youremail@example.com</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+            <p>Email: alamgirctr@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/alamgir-khan-24175213b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">linkedin.com</a></p>
         </div>
     </section>
 
