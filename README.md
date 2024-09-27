@@ -125,18 +125,42 @@
     </footer>
 
     <script>
-        function handleFormSubmit(event) {
+        async function handleFormSubmit(event) {
             event.preventDefault(); // Prevent default form submission
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
-            // Show an alert with the submitted data
-            alert(`Message sent!\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`);
-            
-            // Optionally, reset the form after submission
-            document.getElementById('contact-form').reset();
+            const requestBody = {
+                sender: { email: "alamgirctr@gmail.com" }, // Your sender email
+                to: [{ email: "alamgirctr@gmail.com" }], // Recipient's email
+                subject: subject,
+                htmlContent: `<p><strong>Name:</strong> ${name}</p>
+                              <p><strong>Email:</strong> ${email}</p>
+                              <p><strong>Message:</strong> ${message}</p>`
+            };
+
+            try {
+                const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "api-key": "xkeysib-1795ebe5163a45ee4d2c0bbb8212c29b955e7be5d1962f97d4d1ffd5b276ddc8" // Your Brevo API key
+                    },
+                    body: JSON.stringify(requestBody),
+                });
+
+                if (response.ok) {
+                    alert("Message sent successfully!");
+                    document.getElementById('contact-form').reset();
+                } else {
+                    alert("Failed to send the message. Please try again.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("There was an error sending your message.");
+            }
         }
     </script>
 </body>
