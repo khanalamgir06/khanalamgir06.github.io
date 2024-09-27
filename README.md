@@ -8,15 +8,14 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-      <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W84885HLN0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'YOUR_TRACKING_ID');
-  </script>
-    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W84885HLN0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W84885HLN0'); // Replace YOUR_TRACKING_ID with actual ID
+    </script>
 </head>
 <body>
     <header>
@@ -99,7 +98,7 @@
     <section id="contact">
         <div class="container">
             <h2>Contact</h2>
-            <form action="process_form.php" method="post">
+            <form id="contact-form" onsubmit="return handleFormSubmit(event)">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -124,5 +123,21 @@
             <p>&copy; 2024 Alamgir Khan. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Show an alert with the submitted data
+            alert(`Message sent!\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`);
+            
+            // Optionally, reset the form after submission
+            document.getElementById('contact-form').reset();
+        }
+    </script>
 </body>
 </html>
