@@ -61,7 +61,7 @@
         <div class="container">
             <h2>Resume</h2>
             <p>You can download my resume by clicking the link below:</p>
-            <a href="RsumeAlamgirKhan.pdf" class="cta-button" download>Download Resume</a>
+            <a href="ResumeAlamgirKhan.pdf" class="cta-button" download>Download Resume</a>
             <h3>Experience</h3>
             <p>Company Name | Role | Dates</p>
             <p>Responsibilities and achievements.</p>
@@ -151,11 +151,14 @@
                     body: JSON.stringify(requestBody),
                 });
 
+                const responseText = await response.text(); // Capture the raw response text
+
                 if (response.ok) {
                     alert("Message sent successfully!");
                     document.getElementById('contact-form').reset();
                 } else {
-                    alert("Failed to send the message. Please try again.");
+                    console.error("Failed to send message:", responseText);
+                    alert(`Failed to send the message: ${responseText}`);
                 }
             } catch (error) {
                 console.error("Error:", error);
