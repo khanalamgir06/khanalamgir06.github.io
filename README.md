@@ -146,7 +146,7 @@
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "api-key": "xkeysib-1795ebe5163a45ee4d2c0bbb8212c29b955e7be5d1962f97d4d1ffd5b276ddc8" // Your Brevo API key
+                        "api-key": "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" // Your Brevo API key
                     },
                     body: JSON.stringify(requestBody),
                 });
